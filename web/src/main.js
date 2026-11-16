@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp, watch } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import 'leaflet/dist/leaflet.css';
@@ -10,6 +10,11 @@ import i18n, { ensureLanguage } from './i18n';
 import { state } from './store';
 
 ensureLanguage(state.language);
+
+// keep <html lang> in sync so browsers pick the right CJK font (SC vs TC glyphs)
+watch(() => state.language, (lang) => {
+	if (lang) document.documentElement.lang = lang;
+}, { immediate: true });
 
 // follow the OS colour scheme
 const dark = window.matchMedia('(prefers-color-scheme: dark)');

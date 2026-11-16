@@ -1,0 +1,615 @@
+{
+  "navigation": {
+    "calls": "呼叫",
+    "subscribers": "訂閱者",
+    "rubrics": {
+      "title": "欄目",
+      "all": "所有欄目",
+      "activate": "啟用欄目",
+      "content": "欄目內容"
+    },
+    "transmitters": {
+      "title": "發射機",
+      "all": "所有發射機",
+      "map": "地圖",
+      "groups": "發射機組"
+    },
+    "nodes": "節點",
+    "users": "使用者",
+    "help": {
+      "title": "幫助",
+      "wiki": "文件",
+      "support": "支援"
+    },
+    "settings": "設定",
+    "login": "登入",
+    "logout": "登出"
+  },
+  "home": {
+    "carousel": {
+      "1": {
+        "title": "歡迎使用 DAPNET Web！",
+        "text": "DAPNET（去中心化業餘無線電尋呼網路）是由業餘無線電愛好者運營的網路。由於使用業餘無線電頻率，禁止任何商業用途。<br>如果您是持照的業餘無線電操作員，請立即申請登入賬號。",
+        "link": "NONE"
+      },
+      "2": {
+        "title": "RasPager 發射機",
+        "text": "低成本、低功率的個人發射機，作為樹莓派的擴充套件板使用。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
+      },
+      "3": {
+        "title": "覆蓋地圖",
+        "text": "發射機及其模擬覆蓋範圍會顯示在地圖上。",
+        "link": "NONE"
+      },
+      "4": {
+        "title": "發射機觸控式螢幕",
+        "text": "基於 Nextion 顯示屏、簡單易用的圖形控制介面，透過 UART 或 USB 轉 UART 連線到發射機主機。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
+      },
+      "5": {
+        "title": "UniPager — 一套軟體支援所有發射機",
+        "text": "UniPager 以 Rust 編寫，可控制所有型別的發射機：RasPager、Ericsson C9000、音效卡和 RFM69。提供 Debian 軟體包，便於安裝和更新。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
+      },
+      "6": {
+        "title": "Swissphone 現代尋呼機",
+        "text": "面向專業使用者的高階型號。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
+      },
+      "7": {
+        "title": "基於 SDR 與 GM1200 的發射機",
+        "text": "只需一臺樹莓派、一臺支援 9600 波特的電臺和一個簡單的音訊介面，也可以與觸控式螢幕搭配使用。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
+      },
+      "8": {
+        "title": "AlphaPOC 602R 尋呼機",
+        "text": "市面有售，體積小，無需改裝，可直接在尋呼機上程式設計。",
+        "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
+      },
+      "9": {
+        "title": "DAPNET 的架構",
+        "text": "採用 REST、WebSocket 等透明且現代的通訊協議。",
+        "link": "NONE"
+      },
+      "10": {
+        "title": "工單系統支援",
+        "text": "支援請求由團隊處理，響應迅速並能最大程度共享知識。",
+        "link": "https://support.hampager.de/"
+      }
+    },
+    "information": {
+      "dapnet": {
+        "title": "DAPNET",
+        "projects": "專案"
+      },
+      "map": "檢視完整地圖",
+      "statistics": {
+        "calls": "呼叫",
+        "rubric-content": "欄目內容",
+        "rubrics": "欄目",
+        "transmitters": "發射機",
+        "nodes": "節點",
+        "users": "使用者"
+      }
+    }
+  },
+  "transmitter": {
+    "overview": {
+      "table": {
+        "title": "所有發射機",
+        "callsign": "呼號",
+        "node": "節點",
+        "ipaddress": "IP 地址",
+        "device": "裝置",
+        "status": "狀態",
+        "connectedsince": "連線時間"
+      },
+      "actions": {
+        "newtransmitter": "新建發射機",
+        "sendmailtoallowners": "發郵件給所有擁有者"
+      },
+      "statistics": {
+        "widerange": "廣域",
+        "personal": "個人",
+        "total": "合計",
+        "widerangeonly": "僅廣域發射機"
+      },
+      "information": {
+        "text": "此處列出本網路所有已登記的發射機。發射機必須先由管理員登記，才能連線到節點。發射機分為兩類：廣域（&gt; 1 瓦）和個人（&lt;= 1 瓦）。為什麼有這麼多離線的發射機？這些是以前登記過但目前不線上的發射機，系統不會記錄哪些發射機“應該”線上。<br>每臺發射機有一個或多個擁有者，擁有者可以自行修改設定。每臺發射機分配 1 至 16 個時隙，因為所有發射機使用同一頻率，但不能同時發射。請勿為你的發射機分配覆蓋範圍內已被佔用的時隙。如需幫助，請聯絡管理員。"
+      }
+    },
+    "new": {
+      "newtransmitter": "新建發射機",
+      "edittransmitter": "編輯發射機",
+      "callsign": {
+        "title": "呼號",
+        "help": "請輸入此發射機有效的業餘無線電呼號。系統每 10 分鐘會用它傳送一次發射機識別訊息，以符合法規要求。"
+      },
+      "import": {
+        "help": "可從 hamnetdb.net 快速匯入站點，所選站點的位置訊息會複製到表單中。"
+      },
+      "password": {
+        "title": "密碼",
+        "help": "請輸入此發射機的認證密碼。在 UniPager 網頁介面中稱為 Auth Key。"
+      },
+      "usage": {
+        "title": "用途",
+        "personal": "個人",
+        "widerange": "廣域",
+        "help": "發射機分為兩類：個人（低功率發射機，例如 RasPager）和廣域（較高功率並架設在高處）。"
+      },
+      "antennatype": {
+        "title": "天線型別",
+        "omni": "全向",
+        "directional": "定向",
+        "other": "其他",
+        "help": "請選擇全向天線（例如 X-50）或定向天線（例如八木天線）。"
+      },
+      "antennadirection": {
+        "help": "<b>天線主波束方向</b>：以真北為基準，輸入天線主波束方向的角度。"
+      },
+      "other": {
+        "title": "其他",
+        "power": {
+          "help": "<b>發射功率</b>：輸入扣除饋線損耗後的發射輸出功率（瓦）。"
+        },
+        "antennalevel": {
+          "help": "<b>天線離地高度</b>：輸入天線距離地面的高度（米），不是海拔高度。"
+        },
+        "antennagain": {
+          "help": "<b>天線增益</b>：定向天線請輸入主瓣方向增益，全向天線請輸入平均增益，單位為 dBi（相對於各向同性輻射器的增益）。"
+        },
+        "txidentric": {
+          "help": "<b>發射機識別 RIC</b>：輸入一個 RIC（預設值為 8），用於傳送包含本表單中業餘無線電呼號的識別尋呼訊息。"
+        }
+      },
+      "timeslots": {
+        "title": "時隙",
+        "help": "所有發射機使用同一頻率，因此採用分時多重進接方式，共有 16 個時隙。請根據附近發射機的情況分配本發射機的時隙，避免與其他發射機重疊。可以用發射機地圖檢視鄰近發射機已分配的時隙。如無法滿足需求，請聯絡鄰近發射機的擁有者協商。一般每臺發射機 4 個或更少的時隙就足夠了。"
+      },
+      "owner": {
+        "help": "擁有者可以修改此發射機的引數。"
+      },
+      "table": {
+        "description": "此表顯示已登記的尋呼發射機、線上狀態及其他訊息。個人發射機功率低、覆蓋範圍很小；廣域發射機通常架設在高處，覆蓋範圍較大。"
+      }
+    },
+    "map": {
+      "title": "地圖",
+      "settings": {
+        "title": "設定"
+      },
+      "checkbox": {
+        "showonlineonly": "只顯示線上發射機",
+        "showwiderangeonly": "只顯示廣域發射機",
+        "showbytimeslot": "按時隙顯示發射機",
+        "shownodes": "顯示節點",
+        "shownodeline": "顯示發射機到節點的連線"
+      },
+      "actions": {
+        "showallcoverage": "顯示所有覆蓋範圍",
+        "removeallcoverage": "移除所有覆蓋範圍"
+      },
+      "alerts": {
+        "load": {
+          "title": "載入覆蓋範圍？",
+          "text": "按“繼續”為當前可見的發射機載入覆蓋範圍。這可能需要一些時間，並會加重裝置負擔。"
+        },
+        "confirm": {
+          "title": "確定嗎？",
+          "text": "將載入並顯示 <b>{amount} 臺發射機</b>的覆蓋範圍。這需要一些時間，並會加重裝置負擔。",
+          "continue": "確定，如果瀏覽器崩潰我不會怪開發者。"
+        }
+      }
+    }
+  },
+  "footer": {
+    "language": {
+      "title": "語言",
+      "en": "英語",
+      "de": "德語",
+      "es": "西班牙語",
+      "nl": "荷蘭語",
+      "fr": "法語",
+      "pl": "波蘭語",
+      "it": "義大利語",
+      "pt": "葡萄牙語",
+      "se": "瑞典語",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文"
+    },
+    "support": {
+      "title": "支援我們",
+      "github": "GitHub",
+      "rwth-amateur-radio": "RWTH 業餘無線電"
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "contact": "聯絡",
+      "impress": "版本說明",
+      "privacy": "隱私"
+    },
+    "versions": {
+      "title": "版本",
+      "check": "檢查"
+    },
+    "cookieconsent": {
+      "button": "好",
+      "text": "本網站使用 Cookie 和瀏覽器本地儲存來提供服務。繼續使用即表示你已閱讀並理解我們的隱私政策。"
+    }
+  },
+  "table": {
+    "search": "搜尋",
+    "pagination": {
+      "page": "第",
+      "of": "頁，共"
+    },
+    "actionbuttons": {
+      "edit": "編輯",
+      "delete": "刪除",
+      "email": "傳送郵件",
+      "rubrics": "傳送欄目",
+      "monitoring": "監控"
+    }
+  },
+  "rest": {
+    "errors": {
+      "title": "錯誤",
+      "no-connection": "無法連線",
+      "api-unreachable": "無法連線 API 伺服器，請稍後再試。",
+      "permissions": "登入訊息無效或沒有許可權執行此操作，請檢查使用者名稱和密碼。",
+      "http-error": "未處理的 HTTP 錯誤 {status}，請稍後再試。",
+      "403": {
+        "title": "禁止訪問",
+        "text": "沒有許可權執行此操作。"
+      },
+      "404": {
+        "title": "找不到",
+        "text": "找不到所請求的資源。"
+      }
+    }
+  },
+  "alerts": {
+    "success": {
+      "title": "成功",
+      "text": "操作已成功執行。"
+    },
+    "delete": {
+      "title": "確定嗎？",
+      "text": "資料刪除後將無法恢復。"
+    },
+    "input": {
+      "title": "缺少輸入",
+      "text": "請填寫所有欄位後再繼續。"
+    },
+    "overwrite": {
+      "title": "已阻止覆蓋",
+      "text": "已阻止一次可能覆蓋現有資料的操作。"
+    },
+    "password": {
+      "title": "包含禁用字元",
+      "text": "密碼只能包含 <code>A-Z</code>、<code>a-z</code> 和/或 <code>0-9</code>。"
+    },
+    "location": {
+      "title": "位置無效",
+      "text": "請檢查輸入的位置，並使用正確的小數點符號（例如 <code>.</code>）。"
+    }
+  },
+  "general": {
+    "continue": "繼續",
+    "submit": "提交",
+    "abort": "取消",
+    "search": "搜尋",
+    "information": "說明",
+    "owner": "擁有者",
+    "actions": "操作",
+    "statistics": "統計",
+    "description": "描述",
+    "name": "名稱",
+    "latlong": {
+      "title": "緯度 / 經度",
+      "north": "北",
+      "south": "南",
+      "east": "東",
+      "west": "西",
+      "picker": "位置選擇"
+    },
+    "password": "密碼",
+    "yes": "是",
+    "no": "否",
+    "permalink": "永久連結",
+    "duplication": "修改此名稱會建立一個副本，<i>不會</i>修改原有專案的名稱。",
+    "news": "新聞"
+  },
+  "rubric": {
+    "overview": {
+      "totalrubrics": "欄目總數",
+      "information": {
+        "help": "這裡列出所有欄目。一個欄目編號可以分配給多個發射機組。請注意，同一欄目編號所用的發射機組不能重疊，以免編號衝突。<br>使用“啟用欄目”可讓你的 Skyper 尋呼機接收欄目。"
+      },
+      "table": {
+        "number": "編號",
+        "name": "名稱",
+        "label": "標籤",
+        "transmittergroup": "發射機組"
+      }
+    },
+    "new": {
+      "newrubric": "新建欄目",
+      "name": "名稱",
+      "label": "標籤",
+      "number": "編號",
+      "transmittergroup": "發射機組",
+      "information": {
+        "help": "欄目是 Skyper 尋呼機的功能，可按類別（欄目）傳送新聞。請謹慎分配編號，如有疑問請聯絡管理員。全網欄目數量上限為 95 個。"
+      },
+      "editrubric": "編輯欄目"
+    },
+    "activation": {
+      "pagernumber": "尋呼機號碼（你的 RIC）",
+      "information": {
+        "help": "此功能會向你的 Skyper 尋呼機傳送啟用呼叫。成功接收後，可在 Skyper 選單的“Skyper Setup”中選擇要接收的欄目。"
+      },
+      "transmittergroup": "發射機組"
+    }
+  },
+  "subscribers": {
+    "overview": {
+      "newsubscriber": "新建訂閱者",
+      "allsubscribers": "所有訂閱者",
+      "totalsubscribers": "訂閱者總數",
+      "information": {
+        "help": "訂閱者是一個名稱（呼號）與一個或多個 RIC 號碼（例如 Skyper 地址）之間的關聯。"
+      },
+      "table": {
+        "pager": "尋呼機",
+        "subscriber": "訂閱者"
+      }
+    },
+    "new": {
+      "newsubscriber": "新建訂閱者",
+      "editsubscriber": "編輯訂閱者",
+      "subscriber": {
+        "title": "訂閱者",
+        "help": "請輸入個人有效的業餘無線電呼號，或組織的分類名稱。"
+      },
+      "description": {
+        "help": "填寫你的姓名或對此專案有用的描述。"
+      },
+      "pager": {
+        "title": "尋呼機",
+        "helprics": "每行填寫一個尋呼機 RIC 號碼。",
+        "helpnames": "每行填寫一個名稱，對應左側同一行的 RIC 號碼。"
+      },
+      "owner": {
+        "title": "擁有者",
+        "help": "訂閱者的擁有者可以修改其引數。"
+      },
+      "information": {
+        "help": "訂閱者是一個名稱（通常是你的業餘無線電呼號）與一個或多個尋呼機 ID（RIC）之間的對應關係。"
+      }
+    }
+  },
+  "calls": {
+    "overview": {
+      "allcalls": "所有呼叫",
+      "newcall": "新建呼叫",
+      "emergencies": "緊急呼叫",
+      "totalcalls": "呼叫總數",
+      "information": {
+        "help": "呼叫是傳送給個別接收者的個人尋呼訊息。"
+      },
+      "table": {
+        "timestamp": "時間",
+        "txgroups": "發射機組",
+        "message": "訊息",
+        "emergency": "高優先順序？"
+      }
+    },
+    "new": {
+      "newcall": "新建呼叫",
+      "message": {
+        "title": "訊息",
+        "charactersremaining": "還可輸入 {remaining} / 80 個字元。<br>輸入尋呼內容，系統會自動加上你的使用者名稱。"
+      },
+      "subscribers": {
+        "help": "選擇一個或多個要接收此訊息的訂閱者。"
+      },
+      "transmittergroups": {
+        "title": "發射機組",
+        "help": "選擇要廣播此訊息的發射機組。預設為所有發射機；如果知道接收者的大致位置，可以只用該地區的發射機，以減輕發射機負擔。"
+      },
+      "emergency": {
+        "title": "緊急？",
+        "help": "如希望訊息儘快送達，請勾選此項。系統會以最高優先順序處理你的訊息，不會有其他影響。請合理使用此功能。"
+      },
+      "information": {
+        "help": "這裡顯示你最近的尋呼呼叫。"
+      }
+    }
+  },
+  "news": {
+    "overview": {
+      "allrubriccontent": "所有欄目內容",
+      "newrubriccontent": "新建欄目內容",
+      "totalrubriccontent": "欄目內容總數",
+      "information": {
+        "help": "這裡顯示的不是關於 DAPNET 的一般新聞，而是最近傳送到各欄目的內容。每當使用者更新欄目的 10 個訊息位置時，變更都會顯示在這裡。"
+      },
+      "table": {
+        "timestamp": "時間",
+        "rubric": "欄目",
+        "number": "#",
+        "message": "訊息"
+      }
+    },
+    "new": {
+      "newrubriccontent": "新建欄目內容",
+      "message": "訊息",
+      "charactersremaining": "個字元可用",
+      "rubrics": "欄目",
+      "number": "編號",
+      "chooseautomatically": "自動選擇",
+      "information": {
+        "help": "這些是欄目的內容。目前只有 Skyper 尋呼機能以欄目形式顯示，同時也會以個人呼叫傳送到 RIC 1000 + 欄目編號，供 AlphaPOC 等尋呼機接收。"
+      }
+    }
+  },
+  "nodes": {
+    "overview": {
+      "allnodes": "所有節點",
+      "newnode": "新建節點",
+      "sendmailtoallowners": "發郵件給所有擁有者",
+      "statistics": {
+        "totalnodes": "節點總數"
+      },
+      "information": {
+        "help": "節點是執行核心服務的伺服器。此列表顯示它們的狀態。"
+      },
+      "table": {
+        "name": "名稱",
+        "version": "版本",
+        "ipaddress": "IP 地址",
+        "status": "狀態"
+      }
+    },
+    "new": {
+      "newnode": "新建節點",
+      "editnode": "編輯節點",
+      "name": {
+        "title": "名稱"
+      },
+      "status": {
+        "title": "狀態",
+        "online": "線上",
+        "suspended": "暫停"
+      },
+      "information": {
+        "help": "此表顯示已登記的核心節點，主要供系統管理員參考。"
+      }
+    }
+  },
+  "login": {
+    "username": "使用者名稱",
+    "password": "密碼",
+    "information": {
+      "help": "請輸入你的個人登入訊息。登入後可能會在業餘無線電頻率上觸發發射，因此需要驗證身份。如無法登入，請聯絡管理員。"
+    }
+  },
+  "logout": {
+    "seepagewrong": "如果你看到此頁面，表示出了問題。",
+    "emoji": "Emoji 免費提供者："
+  },
+  "impress": {
+    "title": "版本說明"
+  },
+  "error404": {
+    "title": "錯誤 404 — 找不到頁面",
+    "emoji": "Emoji 免費提供者："
+  },
+  "privacy": {
+    "title": "隱私"
+  },
+  "versioncheck": {
+    "title": "版本檢查"
+  },
+  "group": {
+    "overview": {
+      "newtxgroup": "新建發射機組",
+      "alltxgroups": "所有發射機組",
+      "totaltxgroups": "組總數",
+      "information": {
+        "help": "發射機組是把一臺或多臺發射機組合在一起的邏輯分組，用於把發射機劃分到不同地區，因為並非所有內容都需要在整個網路傳送。個人呼叫和欄目內容都必須指定發射機組，只有該組內的發射機才會收到併發射這些訊息。"
+      }
+    },
+    "new": {
+      "newtxgroup": "新建發射機組",
+      "edittxgroup": "編輯發射機組",
+      "information": {
+        "help": "發射機組把一臺或多臺發射機組合成一個邏輯單位。"
+      }
+    }
+  },
+  "users": {
+    "general": {
+      "email": "電子郵件",
+      "admin": "管理員？",
+      "newuser": "新建使用者"
+    },
+    "overview": {
+      "allusers": "所有使用者",
+      "sendemailallusers": "發郵件給所有使用者",
+      "totaladmins": "管理員總數",
+      "totalusers": "使用者總數",
+      "information": {
+        "help": "這裡列出本網路所有已註冊的使用者賬號。非管理員看不到其他使用者的詳細訊息。你可以自行修改自己的資料，例如密碼或電子郵件地址。"
+      }
+    },
+    "new": {
+      "edituser": "編輯使用者",
+      "password": {
+        "help": "新生成的密碼："
+      },
+      "information": {
+        "help": "此表顯示已註冊的使用者及其詳細訊息。"
+      }
+    }
+  },
+  "pagetitle": {
+    "home": "首頁",
+    "calls": {
+      "overview": "呼叫總覽",
+      "new": "新建呼叫"
+    },
+    "subscribers": {
+      "overview": "訂閱者總覽",
+      "new": "新建訂閱者",
+      "edit": "編輯訂閱者"
+    },
+    "rubric": {
+      "overview": "欄目總覽",
+      "new": "新建欄目",
+      "edit": "編輯欄目",
+      "activate": "啟用欄目",
+      "content": {
+        "overview": "欄目內容總覽",
+        "new": "新建欄目內容"
+      }
+    },
+    "transmitter": {
+      "overview": "發射機總覽",
+      "new": "新建發射機",
+      "edit": "編輯發射機",
+      "map": {
+        "overview": "發射機地圖",
+        "detail": "發射機地圖詳情"
+      },
+      "monitoring": "發射機監控"
+    },
+    "transmittergroup": {
+      "overview": "發射機組總覽",
+      "new": "新建發射機組",
+      "edit": "編輯發射機組"
+    },
+    "node": {
+      "overview": "節點總覽",
+      "new": "新建節點",
+      "edit": "編輯節點",
+      "monitoring": "節點監控"
+    },
+    "user": {
+      "overview": "使用者總覽",
+      "new": "新建使用者",
+      "edit": "編輯使用者"
+    },
+    "login": "登入",
+    "logout": "登出",
+    "versioncheck": "版本檢查",
+    "impress": "版本說明",
+    "privacy": "隱私",
+    "notfound": "找不到頁面"
+  }
+}

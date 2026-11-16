@@ -6,10 +6,7 @@ const loaders = import.meta.glob('./i18n/*.json');
 const messages = { en };
 const loading = {};
 
-export const LANGUAGES = [
-	['en', 'gb'], ['de', 'de'], ['nl', 'nl'], ['fr', 'fr'], ['it', 'it'],
-	['pl', 'pl'], ['pt', 'pt'], ['es', 'es'], ['se', 'se']
-];
+export { LANGUAGES } from './languages';
 
 export function ensureLanguage(lang) {
 	if (messages[lang] || loading[lang]) return;

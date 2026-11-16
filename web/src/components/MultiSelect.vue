@@ -5,7 +5,7 @@
 				{{ item }}
 				<button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove" @click.stop="remove(item)"></button>
 			</span>
-			<input ref="input" v-model="query" class="ms-input" :placeholder="selected.length ? '' : 'Type to search'"
+			<input ref="input" v-model="query" class="ms-input" :placeholder="selected.length ? '' : $t('general.search') + '…'"
 				@focus="open = true" @keydown.enter.prevent="pickFirst" @keydown.backspace="backspace" @keydown.esc="open = false">
 		</div>
 		<ul v-if="open && options.length" class="dropdown-menu show w-100 ms-menu">

@@ -6,7 +6,7 @@ A lightweight, standalone rewrite of [DAPNET Core](https://github.com/Decentrali
 - **backend/** — Python 3.12, Starlette + asyncio. One process runs the REST API, the transmitter
   server and the scheduler. ~45 MB RAM, two runtime dependencies (`starlette`, `uvicorn`).
 - **web/** — Vue 3 + Vite single-page app, served by the backend. Same pages, same translations
-  (9 languages) as DAPNET Web.
+  (9 languages) as DAPNET Web, plus Simplified and Traditional Chinese.
 
 ## Compatibility
 

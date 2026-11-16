@@ -1,0 +1,267 @@
+{
+  "navigation": {
+    "calls": "呼叫",
+    "subscribers": "订阅者",
+    "rubrics": { "title": "栏目", "all": "所有栏目", "activate": "激活栏目", "content": "栏目内容" },
+    "transmitters": { "title": "发射机", "all": "所有发射机", "map": "地图", "groups": "发射机组" },
+    "nodes": "节点",
+    "users": "用户",
+    "help": { "title": "帮助", "wiki": "文档", "support": "支持" },
+    "settings": "设置",
+    "login": "登录",
+    "logout": "退出登录"
+  },
+  "home": {
+    "carousel": {
+      "1": { "title": "欢迎使用 DAPNET Web！", "text": "DAPNET（去中心化业余无线电寻呼网络）是由业余无线电爱好者运营的网络。由于使用业余无线电频率，禁止任何商业用途。<br>如果您是持照的业余无线电操作员，请立即申请登录账号。", "link": "NONE" },
+      "2": { "title": "RasPager 发射机", "text": "低成本、低功率的个人发射机，作为树莓派的扩展板使用。", "link": "http://hampager.de/dokuwiki/doku.php?id=raspager" },
+      "3": { "title": "覆盖地图", "text": "发射机及其模拟覆盖范围会显示在地图上。", "link": "NONE" },
+      "4": { "title": "发射机触摸屏", "text": "基于 Nextion 显示屏、简单易用的图形控制界面，通过 UART 或 USB 转 UART 连接到发射机主机。", "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion" },
+      "5": { "title": "UniPager — 一套软件支持所有发射机", "text": "UniPager 以 Rust 编写，可控制所有类型的发射机：RasPager、Ericsson C9000、声卡和 RFM69。提供 Debian 软件包，便于安装和更新。", "link": "http://hampager.de/dokuwiki/doku.php?id=unipager" },
+      "6": { "title": "Swissphone 现代寻呼机", "text": "面向专业用户的高端型号。", "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription" },
+      "7": { "title": "基于 SDR 与 GM1200 的发射机", "text": "只需一台树莓派、一台支持 9600 波特的电台和一个简单的音频接口，也可以与触摸屏搭配使用。", "link": "http://hampager.de/dokuwiki/doku.php?id=9k6" },
+      "8": { "title": "AlphaPOC 602R 寻呼机", "text": "市面有售，体积小，无需改装，可直接在寻呼机上编程。", "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription" },
+      "9": { "title": "DAPNET 的架构", "text": "采用 REST、WebSocket 等透明且现代的通信协议。", "link": "NONE" },
+      "10": { "title": "工单系统支持", "text": "支持请求由团队处理，响应迅速并能最大程度共享知识。", "link": "https://support.hampager.de/" }
+    },
+    "information": {
+      "dapnet": { "title": "DAPNET", "projects": "项目" },
+      "map": "查看完整地图",
+      "statistics": { "calls": "呼叫", "rubric-content": "栏目内容", "rubrics": "栏目", "transmitters": "发射机", "nodes": "节点", "users": "用户" }
+    }
+  },
+  "transmitter": {
+    "overview": {
+      "table": { "title": "所有发射机", "callsign": "呼号", "node": "节点", "ipaddress": "IP 地址", "device": "设备", "status": "状态", "connectedsince": "连接时间" },
+      "actions": { "newtransmitter": "新建发射机", "sendmailtoallowners": "发邮件给所有拥有者" },
+      "statistics": { "widerange": "广域", "personal": "个人", "total": "合计", "widerangeonly": "仅广域发射机" },
+      "information": { "text": "此处列出本网络所有已登记的发射机。发射机必须先由管理员登记，才能连接到节点。发射机分为两类：广域（&gt; 1 瓦）和个人（&lt;= 1 瓦）。为什么有这么多离线的发射机？这些是以前登记过但目前不在线的发射机，系统不会记录哪些发射机“应该”在线。<br>每台发射机有一个或多个拥有者，拥有者可以自行修改设置。每台发射机分配 1 至 16 个时隙，因为所有发射机使用同一频率，但不能同时发射。请勿为你的发射机分配覆盖范围内已被占用的时隙。如需帮助，请联系管理员。" }
+    },
+    "new": {
+      "newtransmitter": "新建发射机",
+      "edittransmitter": "编辑发射机",
+      "callsign": { "title": "呼号", "help": "请输入此发射机有效的业余无线电呼号。系统每 10 分钟会用它发送一次发射机识别信息，以符合法规要求。" },
+      "import": { "help": "可从 hamnetdb.net 快速导入站点，所选站点的位置信息会复制到表单中。" },
+      "password": { "title": "密码", "help": "请输入此发射机的认证密码。在 UniPager 网页界面中称为 Auth Key。" },
+      "usage": { "title": "用途", "personal": "个人", "widerange": "广域", "help": "发射机分为两类：个人（低功率发射机，例如 RasPager）和广域（较高功率并架设在高处）。" },
+      "antennatype": { "title": "天线类型", "omni": "全向", "directional": "定向", "other": "其他", "help": "请选择全向天线（例如 X-50）或定向天线（例如八木天线）。" },
+      "antennadirection": { "help": "<b>天线主波束方向</b>：以真北为基准，输入天线主波束方向的角度。" },
+      "other": {
+        "title": "其他",
+        "power": { "help": "<b>发射功率</b>：输入扣除馈线损耗后的发射输出功率（瓦）。" },
+        "antennalevel": { "help": "<b>天线离地高度</b>：输入天线距离地面的高度（米），不是海拔高度。" },
+        "antennagain": { "help": "<b>天线增益</b>：定向天线请输入主瓣方向增益，全向天线请输入平均增益，单位为 dBi（相对于各向同性辐射器的增益）。" },
+        "txidentric": { "help": "<b>发射机识别 RIC</b>：输入一个 RIC（默认值为 8），用于发送包含本表单中业余无线电呼号的识别寻呼信息。" }
+      },
+      "timeslots": { "title": "时隙", "help": "所有发射机使用同一频率，因此采用时分多址方式，共有 16 个时隙。请根据附近发射机的情况分配本发射机的时隙，避免与其他发射机重叠。可以用发射机地图查看邻近发射机已分配的时隙。如无法满足需求，请联系邻近发射机的拥有者协商。一般每台发射机 4 个或更少的时隙就足够了。" },
+      "owner": { "help": "拥有者可以修改此发射机的参数。" },
+      "table": { "description": "此表显示已登记的寻呼发射机、在线状态及其他信息。个人发射机功率低、覆盖范围很小；广域发射机通常架设在高处，覆盖范围较大。" }
+    },
+    "map": {
+      "title": "地图",
+      "settings": { "title": "设置" },
+      "checkbox": { "showonlineonly": "只显示在线发射机", "showwiderangeonly": "只显示广域发射机", "showbytimeslot": "按时隙显示发射机", "shownodes": "显示节点", "shownodeline": "显示发射机到节点的连线" },
+      "actions": { "showallcoverage": "显示所有覆盖范围", "removeallcoverage": "移除所有覆盖范围" },
+      "alerts": {
+        "load": { "title": "加载覆盖范围？", "text": "按“继续”为当前可见的发射机加载覆盖范围。这可能需要一些时间，并会加重设备负担。" },
+        "confirm": { "title": "确定吗？", "text": "将加载并显示 <b>{amount} 台发射机</b>的覆盖范围。这需要一些时间，并会加重设备负担。", "continue": "确定，如果浏览器崩溃我不会怪开发者。" }
+      }
+    }
+  },
+  "footer": {
+    "language": { "title": "语言", "en": "英语", "de": "德语", "es": "西班牙语", "nl": "荷兰语", "fr": "法语", "pl": "波兰语", "it": "意大利语", "pt": "葡萄牙语", "se": "瑞典语", "zh-CN": "简体中文", "zh-TW": "繁體中文" },
+    "support": { "title": "支持我们", "github": "GitHub", "rwth-amateur-radio": "RWTH 业余无线电" },
+    "contact": { "title": "联系我们", "twitter": "Twitter", "facebook": "Facebook", "contact": "联系", "impress": "版本说明", "privacy": "隐私" },
+    "versions": { "title": "版本", "check": "检查" },
+    "cookieconsent": { "button": "好", "text": "本网站使用 Cookie 和浏览器本地存储来提供服务。继续使用即表示你已阅读并理解我们的隐私政策。" }
+  },
+  "table": {
+    "search": "搜索",
+    "pagination": { "page": "第", "of": "页，共" },
+    "actionbuttons": { "edit": "编辑", "delete": "删除", "email": "发送邮件", "rubrics": "发送栏目", "monitoring": "监控" }
+  },
+  "rest": {
+    "errors": {
+      "title": "错误",
+      "no-connection": "无法连接",
+      "api-unreachable": "无法连接 API 服务器，请稍后再试。",
+      "permissions": "登录信息无效或没有权限执行此操作，请检查用户名和密码。",
+      "http-error": "未处理的 HTTP 错误 {status}，请稍后再试。",
+      "403": { "title": "禁止访问", "text": "没有权限执行此操作。" },
+      "404": { "title": "找不到", "text": "找不到所请求的资源。" }
+    }
+  },
+  "alerts": {
+    "success": { "title": "成功", "text": "操作已成功执行。" },
+    "delete": { "title": "确定吗？", "text": "数据删除后将无法恢复。" },
+    "input": { "title": "缺少输入", "text": "请填写所有字段后再继续。" },
+    "overwrite": { "title": "已阻止覆盖", "text": "已阻止一次可能覆盖现有数据的操作。" },
+    "password": { "title": "包含禁用字符", "text": "密码只能包含 <code>A-Z</code>、<code>a-z</code> 和/或 <code>0-9</code>。" },
+    "location": { "title": "位置无效", "text": "请检查输入的位置，并使用正确的小数点符号（例如 <code>.</code>）。" }
+  },
+  "general": {
+    "continue": "继续",
+    "submit": "提交",
+    "abort": "取消",
+    "search": "搜索",
+    "information": "说明",
+    "owner": "拥有者",
+    "actions": "操作",
+    "statistics": "统计",
+    "description": "描述",
+    "name": "名称",
+    "latlong": { "title": "纬度 / 经度", "north": "北", "south": "南", "east": "东", "west": "西", "picker": "位置选择" },
+    "password": "密码",
+    "yes": "是",
+    "no": "否",
+    "permalink": "永久链接",
+    "duplication": "修改此名称会建立一个副本，<i>不会</i>修改原有项目的名称。",
+    "news": "新闻"
+  },
+  "rubric": {
+    "overview": {
+      "totalrubrics": "栏目总数",
+      "information": { "help": "这里列出所有栏目。一个栏目编号可以分配给多个发射机组。请注意，同一栏目编号所用的发射机组不能重叠，以免编号冲突。<br>使用“激活栏目”可让你的 Skyper 寻呼机接收栏目。" },
+      "table": { "number": "编号", "name": "名称", "label": "标签", "transmittergroup": "发射机组" }
+    },
+    "new": {
+      "newrubric": "新建栏目",
+      "name": "名称",
+      "label": "标签",
+      "number": "编号",
+      "transmittergroup": "发射机组",
+      "information": { "help": "栏目是 Skyper 寻呼机的功能，可按类别（栏目）发送新闻。请谨慎分配编号，如有疑问请联系管理员。全网栏目数量上限为 95 个。" },
+      "editrubric": "编辑栏目"
+    },
+    "activation": {
+      "pagernumber": "寻呼机号码（你的 RIC）",
+      "information": { "help": "此功能会向你的 Skyper 寻呼机发送激活呼叫。成功接收后，可在 Skyper 菜单的“Skyper Setup”中选择要接收的栏目。" },
+      "transmittergroup": "发射机组"
+    }
+  },
+  "subscribers": {
+    "overview": {
+      "newsubscriber": "新建订阅者",
+      "allsubscribers": "所有订阅者",
+      "totalsubscribers": "订阅者总数",
+      "information": { "help": "订阅者是一个名称（呼号）与一个或多个 RIC 号码（例如 Skyper 地址）之间的关联。" },
+      "table": { "pager": "寻呼机", "subscriber": "订阅者" }
+    },
+    "new": {
+      "newsubscriber": "新建订阅者",
+      "editsubscriber": "编辑订阅者",
+      "subscriber": { "title": "订阅者", "help": "请输入个人有效的业余无线电呼号，或组织的分类名称。" },
+      "description": { "help": "填写你的姓名或对此项目有用的描述。" },
+      "pager": { "title": "寻呼机", "helprics": "每行填写一个寻呼机 RIC 号码。", "helpnames": "每行填写一个名称，对应左侧同一行的 RIC 号码。" },
+      "owner": { "title": "拥有者", "help": "订阅者的拥有者可以修改其参数。" },
+      "information": { "help": "订阅者是一个名称（通常是你的业余无线电呼号）与一个或多个寻呼机 ID（RIC）之间的对应关系。" }
+    }
+  },
+  "calls": {
+    "overview": {
+      "allcalls": "所有呼叫",
+      "newcall": "新建呼叫",
+      "emergencies": "紧急呼叫",
+      "totalcalls": "呼叫总数",
+      "information": { "help": "呼叫是发送给个别接收者的个人寻呼信息。" },
+      "table": { "timestamp": "时间", "txgroups": "发射机组", "message": "信息", "emergency": "高优先级？" }
+    },
+    "new": {
+      "newcall": "新建呼叫",
+      "message": { "title": "信息", "charactersremaining": "还可输入 {remaining} / 80 个字符。<br>输入寻呼内容，系统会自动加上你的用户名。" },
+      "subscribers": { "help": "选择一个或多个要接收此信息的订阅者。" },
+      "transmittergroups": { "title": "发射机组", "help": "选择要广播此信息的发射机组。默认为所有发射机；如果知道接收者的大致位置，可以只用该地区的发射机，以减轻发射机负担。" },
+      "emergency": { "title": "紧急？", "help": "如希望信息尽快送达，请勾选此项。系统会以最高优先级处理你的信息，不会有其他影响。请合理使用此功能。" },
+      "information": { "help": "这里显示你最近的寻呼呼叫。" }
+    }
+  },
+  "news": {
+    "overview": {
+      "allrubriccontent": "所有栏目内容",
+      "newrubriccontent": "新建栏目内容",
+      "totalrubriccontent": "栏目内容总数",
+      "information": { "help": "这里显示的不是关于 DAPNET 的一般新闻，而是最近发送到各栏目的内容。每当用户更新栏目的 10 个信息位置时，变更都会显示在这里。" },
+      "table": { "timestamp": "时间", "rubric": "栏目", "number": "#", "message": "信息" }
+    },
+    "new": {
+      "newrubriccontent": "新建栏目内容",
+      "message": "信息",
+      "charactersremaining": "个字符可用",
+      "rubrics": "栏目",
+      "number": "编号",
+      "chooseautomatically": "自动选择",
+      "information": { "help": "这些是栏目的内容。目前只有 Skyper 寻呼机能以栏目形式显示，同时也会以个人呼叫发送到 RIC 1000 + 栏目编号，供 AlphaPOC 等寻呼机接收。" }
+    }
+  },
+  "nodes": {
+    "overview": {
+      "allnodes": "所有节点",
+      "newnode": "新建节点",
+      "sendmailtoallowners": "发邮件给所有拥有者",
+      "statistics": { "totalnodes": "节点总数" },
+      "information": { "help": "节点是运行核心服务的服务器。此列表显示它们的状态。" },
+      "table": { "name": "名称", "version": "版本", "ipaddress": "IP 地址", "status": "状态" }
+    },
+    "new": {
+      "newnode": "新建节点",
+      "editnode": "编辑节点",
+      "name": { "title": "名称" },
+      "status": { "title": "状态", "online": "在线", "suspended": "暂停" },
+      "information": { "help": "此表显示已登记的核心节点，主要供系统管理员参考。" }
+    }
+  },
+  "login": {
+    "username": "用户名",
+    "password": "密码",
+    "information": { "help": "请输入你的个人登录信息。登录后可能会在业余无线电频率上触发发射，因此需要验证身份。如无法登录，请联系管理员。" }
+  },
+  "logout": { "seepagewrong": "如果你看到此页面，表示出了问题。", "emoji": "Emoji 免费提供者：" },
+  "impress": { "title": "版本说明" },
+  "error404": { "title": "错误 404 — 找不到页面", "emoji": "Emoji 免费提供者：" },
+  "privacy": { "title": "隐私" },
+  "versioncheck": { "title": "版本检查" },
+  "group": {
+    "overview": {
+      "newtxgroup": "新建发射机组",
+      "alltxgroups": "所有发射机组",
+      "totaltxgroups": "组总数",
+      "information": { "help": "发射机组是把一台或多台发射机组合在一起的逻辑分组，用于把发射机划分到不同地区，因为并非所有内容都需要在整个网络发送。个人呼叫和栏目内容都必须指定发射机组，只有该组内的发射机才会收到并发射这些信息。" }
+    },
+    "new": {
+      "newtxgroup": "新建发射机组",
+      "edittxgroup": "编辑发射机组",
+      "information": { "help": "发射机组把一台或多台发射机组合成一个逻辑单位。" }
+    }
+  },
+  "users": {
+    "general": { "email": "电子邮件", "admin": "管理员？", "newuser": "新建用户" },
+    "overview": {
+      "allusers": "所有用户",
+      "sendemailallusers": "发邮件给所有用户",
+      "totaladmins": "管理员总数",
+      "totalusers": "用户总数",
+      "information": { "help": "这里列出本网络所有已注册的用户账号。非管理员看不到其他用户的详细信息。你可以自行修改自己的资料，例如密码或电子邮件地址。" }
+    },
+    "new": {
+      "edituser": "编辑用户",
+      "password": { "help": "新生成的密码：" },
+      "information": { "help": "此表显示已注册的用户及其详细信息。" }
+    }
+  },
+  "pagetitle": {
+    "home": "首页",
+    "calls": { "overview": "呼叫总览", "new": "新建呼叫" },
+    "subscribers": { "overview": "订阅者总览", "new": "新建订阅者", "edit": "编辑订阅者" },
+    "rubric": { "overview": "栏目总览", "new": "新建栏目", "edit": "编辑栏目", "activate": "激活栏目", "content": { "overview": "栏目内容总览", "new": "新建栏目内容" } },
+    "transmitter": { "overview": "发射机总览", "new": "新建发射机", "edit": "编辑发射机", "map": { "overview": "发射机地图", "detail": "发射机地图详情" }, "monitoring": "发射机监控" },
+    "transmittergroup": { "overview": "发射机组总览", "new": "新建发射机组", "edit": "编辑发射机组" },
+    "node": { "overview": "节点总览", "new": "新建节点", "edit": "编辑节点", "monitoring": "节点监控" },
+    "user": { "overview": "用户总览", "new": "新建用户", "edit": "编辑用户" },
+    "login": "登录",
+    "logout": "退出登录",
+    "versioncheck": "版本检查",
+    "impress": "版本说明",
+    "privacy": "隐私",
+    "notfound": "找不到页面"
+  }
+}

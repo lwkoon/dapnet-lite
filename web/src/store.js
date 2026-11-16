@@ -1,5 +1,6 @@
 // Small persisted store (replaces vuex + vuex-persistedstate).
 import { reactive, computed, watch } from 'vue';
+import { detectLanguage } from './languages';
 
 const KEY = 'dapnet-lite-web';
 
@@ -15,7 +16,7 @@ const saved = load();
 
 export const state = reactive({
 	user: saved.user || { name: 'Guest', auth: '', admin: false },
-	language: saved.language || (navigator.language || 'en').slice(0, 2),
+	language: saved.language || detectLanguage(navigator.language),
 	map: { center: [3.14, 101.69], zoom: 6 },
 	mapTiles: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 });
