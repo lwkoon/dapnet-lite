@@ -1,0 +1,34 @@
+{
+  "transmissionSettings": {
+    "pagingProtocolSettings": {
+      "numberOfSyncLoops": 5,
+      "sendSpeed": 1,
+      "activationCode": "0 7 50,0 7 34,0 7 53,0 7 51,0 7 51,0 7 52,0 7 52,0 7 56"
+    },
+    "serverSettings": {
+      "port": 43434
+    }
+  },
+  "modelSettings": {
+    "stateFile": "/data/State.json",
+    "savingImmediately": true,
+    "callExpirationTimeInMinutes": 1440,
+    "newsExpirationTimeInMinutes": 1440
+  },
+  "restSettings": {
+    "port": 8080,
+    "hostname": "0.0.0.0"
+  },
+  "clusterSettings": {
+    "nodeName": "lucifernet"
+  },
+  "schedulerSettings": {
+    "timeTransmissionCron": "0 0/20 * * * ?",
+    "localTimeTransmissionCron": "0 10/20 * * * ?",
+    "rubricNameTransmissionCron": "15 0/20 * * * ?",
+    "newsTransmissionCron": "45 0 * * * ?",
+    "stateSavingCron": "30 0/10 * * * ?",
+    "stateCleaningCron": "0 0 0 * * ?",
+    "transmitterIdentificationCron": "0 0/10 * * * ?"
+  }
+}

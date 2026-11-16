@@ -1,0 +1,19 @@
+# --- secrets / runtime data (never commit) ---
+.env
+.env.*
+!.env.example
+data/
+*.bak
+*.bak-*
+State.json*
+*.secrets
+
+# --- build / tooling ---
+node_modules/
+web/dist/
+.venv/
+uv.lock
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store

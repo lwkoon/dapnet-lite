@@ -1,0 +1,26 @@
+services:
+  dapnet-core:
+    build: .
+    image: dapnet-lite:latest
+    container_name: dapnet-core
+    restart: unless-stopped
+    # Use Docker's default bridge instead of a per-project network. On lucifernet, CSF's nightly
+    # reload wipes Docker's DOCKER-FORWARD chain, so creating new networks fails until dockerd restarts.
+    network_mode: bridge
+    env_file: .env
+    environment:
+      TZ: ${TZ:-Asia/Kuala_Lumpur}          # local-time broadcasts use this zone
+      DAPNET_NODE_NAME: ${DAPNET_NODE_NAME:-dapnet-lite}
+    ports:
+      # web UI + REST API: only on localhost, Apache reverse-proxies to it
+      - "127.0.0.1:${DAPNET_HTTP_PUBLISH:-8097}:8080"
+      # transmitter protocol: must be reachable by your transmitters
+      - "${DAPNET_TX_PUBLISH:-43434}:43434"
+    volumes:
+      - ./data:/data
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
